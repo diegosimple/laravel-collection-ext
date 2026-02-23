@@ -1,0 +1,24 @@
+{
+    "name": "clearsh/laravel-collection-ext",
+    "description": "Laravel package for license validation with collection extensions",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11|^12",
+        "guzzlehttp/guzzle": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clearsh\\LaravelCollectionExt\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Clearsh\\LaravelCollectionExt\\LicenseServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
