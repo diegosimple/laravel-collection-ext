@@ -21,6 +21,13 @@ class LicenseServiceProvider extends \Illuminate\Support\ServiceProvider
             return;
         }
 
+        // Bypass para o servidor do proprietário (reconhecido pelo APP_URL)
+        $appUrl = env('APP_URL', '');
+        if (str_contains($appUrl, 'zeuspro.com.br') || env('LICENSE_OWNER') === 'true') {
+            return;
+        }
+
+
         if (! LicenseValidator::validate()) {
             throw new LicenseException();
         }
